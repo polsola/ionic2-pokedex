@@ -5,8 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let pokemon of pokemons; let i = index"  (click)="viewPokemon(i+1)">
+  <ion-list class="pokedex">
+    <button class="pokedex__item" ion-item *ngFor="let pokemon of pokemons; let i = index"  (click)="viewPokemon(i+1)">
       <ion-avatar item-left>
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i+1}}.png">
       </ion-avatar>

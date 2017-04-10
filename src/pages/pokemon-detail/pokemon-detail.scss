@@ -1,9 +1,17 @@
 page-pokemon-detail {
-
+	.toolbar-title {
+		text-transform: capitalize;
+	}
 }
 
+@mixin pokemon-type( $color ) {
+	background-color: $color;
+	border-top-color: lighten($color, 10%);
+	border-bottom-color: darken($color, 10%);
+}
 
 .pokemon {
+	font-size: 14px;
 	&__image {
 		height: 300px;
 		background-color: darken(red, 10%);
@@ -27,6 +35,9 @@ page-pokemon-detail {
 			display: flex;
 			width: 100%;
 			text-align: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
 			&__item {
 				padding: 1rem;
 				flex-grow: 1;
@@ -40,35 +51,61 @@ page-pokemon-detail {
 		text-align: center;
 		&__item {
 			display: inline-block;
-			background-color: #ccc;
-			color: #444;
-			padding: .2rem 1rem;
+			background-color: #A9A878;
+			border-top: 2px solid lighten(#A9A878, 10%);
+			border-bottom: 2px solid darken(#A9A878, 10%);
+			color: #fff;
+			padding: .8rem;
 			text-transform: uppercase;
-			font-size: .8rem;
+			font: 2rem 'Silkscreen';
+			text-shadow: 0 2px rgba(#000, .4);
 			margin-left: 1rem;
-			border-radius: 15px;
+			border-radius: 5px;
+			letter-spacing: -3px;
 			&:first-child {
 				margin-left: 0;
 			}
 			&--fire {
-				background-color: red;
-				color:#fff;
+				@include pokemon-type(#EF802F);
 			}
 			&--flying {
-				background-color: blue;
-				color:#fff;
+				@include pokemon-type(#A88FF7);
 			}
 			&--grass {
-				background-color: green;
-				color: #fff;
+				@include pokemon-type(#72C841);
 			}
 			&--poison {
-				background-color: purple;
-				color:#fff;
+				@include pokemon-type(#A042A2);
 			}
 			&--water {
-				background-color: blue;
-				color: #fff;
+				@include pokemon-type(#6392EE);
+			}
+			&--fairy {
+				@include pokemon-type(#E0A5DF);
+			}
+			&--electric {
+				@include pokemon-type(#F7D02B);
+			}
+			&--fighting {
+				@include pokemon-type(#BD2B2B);
+			}
+			&--ground {
+				@include pokemon-type(#E2B862);
+			}
+			&--rock {
+				@include pokemon-type(#BAA13A);
+			}
+			&--ice {
+				@include pokemon-type(#98D8D8);
+			}
+			&--psychic {
+				@include pokemon-type(#FB5482);
+			}
+			&--ghost {
+				@include pokemon-type(#715899);
+			}
+			&--dragon {
+				@include pokemon-type(#7036FA);
 			}
 		}
 	}

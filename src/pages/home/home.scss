@@ -1,3 +1,9 @@
 page-home {
 
 }
+
+.pokedex {
+	&__item {
+		text-transform: capitalize;
+	}
+}

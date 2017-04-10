@@ -14,3 +14,15 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face {
+    font-family: 'Silkscreen';
+    src: url('../assets/fonts/slkscr-webfont.eot');
+    src: url('../assets/fonts/slkscr-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/slkscr-webfont.woff') format('woff'),
+         url('../assets/fonts/slkscr-webfont.ttf') format('truetype'),
+         url('../assets/fonts/slkscr-webfont.svg#silkscreen') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

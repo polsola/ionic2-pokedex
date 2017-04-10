@@ -15,7 +15,7 @@
 
 <ion-content *ngIf="loaded">
 	<section class="pokemon__image">
-      <ion-slides>
+      <ion-slides pager="true">
         <ion-slide ng-if="pokemon.sprites.front_default">
           <img src="{{pokemon.sprites.front_default}}">
         </ion-slide>
