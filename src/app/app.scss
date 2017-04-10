@@ -26,3 +26,25 @@
     font-style: normal;
 
 }
+
+$primary-color: #DC0A2D;
+
+.button {
+	background-color: $primary-color;
+	width: 100%;
+	padding: 2rem;
+	border-radius:3px;
+	border-top: 4px solid lighten($primary-color, 10%);
+	border-bottom: 4px solid darken($primary-color, 10%);
+	color:#fff;
+	text-transform: uppercase;
+	font: 2rem 'Silkscreen';
+	text-shadow: 0 2px rgba(#000, .4);
+}
+
+.actions-footer {
+	position: fixed;
+	bottom: 70px;
+	padding: 0 1rem;
+	width: 100%;
+}

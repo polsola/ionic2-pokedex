@@ -36,8 +36,11 @@
 			<li *ngFor="let type of pokemon.types;" class="pokemon__type__item pokemon__type__item--{{ type.type.name }}">{{ type.type.name }}</li>
 		</ul>
 		<ul class="pokemon__data__stats">
-			<li class="pokemon__data__stats__item">{{ pokemon.height }}</li>
-			<li class="pokemon__data__stats__item">{{ pokemon.weight }}</li>
+			<li class="pokemon__data__stats__item"><span>Height</span>{{ pokemon.height }}</li>
+			<li class="pokemon__data__stats__item"><span>Weight</span>{{ pokemon.weight }}</li>
 		</ul>
-    </section>
+  </section>
+  <section class="actions-footer">
+     <button class="button primary expanded" (click)="presentToast()">Add to my team</button>
+  </section>
 </ion-content>

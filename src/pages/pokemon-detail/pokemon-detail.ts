@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController} from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController} from 'ionic-angular';
 
 import {PokemonData} from '../../providers/pokemon-data';
 
@@ -26,7 +26,13 @@ export class PokemonDetailPage {
   
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public pokemonData: PokemonData) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public loadingCtrl: LoadingController, 
+    public pokemonData: PokemonData,
+    private toastCtrl: ToastController
+    ) {
 
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
@@ -43,6 +49,20 @@ export class PokemonDetailPage {
         this.loaded = true;
         loading.dismiss();
   		});
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'The pokemon was added to your team',
+      duration: 3000,
+      position: 'top'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
   }
 
   ionViewDidLoad() {
