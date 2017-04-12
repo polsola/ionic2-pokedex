@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController} from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import {PokemonData} from '../../providers/pokemon-data';
 
@@ -22,7 +23,6 @@ export class PokemonDetailPage {
   pokemon = {};
 
   loaded = false;
-
   
 
 
@@ -31,7 +31,8 @@ export class PokemonDetailPage {
     public navParams: NavParams, 
     public loadingCtrl: LoadingController, 
     public pokemonData: PokemonData,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public storage: Storage
     ) {
 
     let loading = this.loadingCtrl.create({
@@ -40,18 +41,29 @@ export class PokemonDetailPage {
 
     loading.present();
 
+    //this.storage.remove('team');
+
   	this.pokemon_index = navParams.get('pokemon');
-    console.log(this.pokemon);
   	this.pokemonData.single(this.pokemon_index)
   		.then(data => {
   			this.pokemon = data;
-        console.log(this.pokemon);
         this.loaded = true;
         loading.dismiss();
   		});
   }
 
-  presentToast() {
+  addToTeam() {
+    this.storage.get('team').then((team) => {
+      console.log(team);
+      if(team == null) {
+        team = new Array();
+        console.log('Empty!');
+      }
+      team.push({ index : this.pokemon_index, pokemon : this.pokemon });
+      this.storage.set('team', team);
+      console.log(team);
+    });
+
     let toast = this.toastCtrl.create({
       message: 'The pokemon was added to your team',
       duration: 3000,
@@ -59,7 +71,7 @@ export class PokemonDetailPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+      //console.log('Dismissed toast');
     });
 
     toast.present();

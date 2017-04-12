@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      My team
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="pokedex">
+		<ion-item-sliding *ngFor="let team_member of team; let i = index">
+			<button class="pokedex__item" ion-item (click)="viewPokemon(team_member.index)">
+			  <ion-avatar item-left>
+			    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{team_member.index}}.png">
+			  </ion-avatar>
+			  {{ team_member.pokemon.name }}
+			</button>
+		    <ion-item-options side="right">
+		      <button ion-button color="danger" (click)="removePokemon(team_member.index)">
+		        <ion-icon name="trash"></ion-icon>
+		        Remove
+		      </button>
+		    </ion-item-options>
+    	</ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+   </ion-infinite-scroll>
+</ion-content>
