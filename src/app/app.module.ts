@@ -28,7 +28,10 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot({
+       name: '__mydb',
+       driverOrder: ['sqlite', 'indexeddb', 'websql']
+     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

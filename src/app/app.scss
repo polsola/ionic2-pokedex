@@ -32,13 +32,13 @@ $primary-color: #DC0A2D;
 .main-button {
 	background-color: $primary-color;
 	width: 100%;
-	padding: 2rem;
+	padding: 1rem;
 	border-radius:3px;
 	border-top: 4px solid lighten($primary-color, 10%);
 	border-bottom: 4px solid darken($primary-color, 10%);
 	color:#fff;
 	text-transform: uppercase;
-	font: 2rem 'Silkscreen';
+	font: 1.6rem 'Silkscreen';
 	text-shadow: 0 2px rgba(#000, .4);
 }
 

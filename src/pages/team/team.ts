@@ -13,12 +13,20 @@ import { PokemonDetailPage } from '../pokemon-detail/pokemon-detail';
 export class TeamPage {
 
 	team: any;
+	name = 'Meh';
 
 	constructor(
 		public navCtrl: NavController, 
 		public http: Http,
 		public storage: Storage
 		) {
+
+		storage.ready().then(() => {
+			storage.set('name', 'Max');
+			storage.get('name').then((val) => {
+	         this.name = val;
+	       });
+		});
 
 		
 
@@ -40,6 +48,9 @@ export class TeamPage {
 
 	ionViewWillEnter() {
 	    this.storage.get('team').then((team) => {
+	    	if( team == null ) {
+	    		team = new Array();
+	    	}
 			console.log(team);
 			console.log(team.length);
 		  	this.team = team;

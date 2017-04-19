@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content>
+{{ name }}
   <ion-list class="pokedex">
 		<ion-item-sliding *ngFor="let team_member of team; let i = index">
 			<button class="pokedex__item" ion-item (click)="viewPokemon(team_member.index)">
