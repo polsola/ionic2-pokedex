@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -16,35 +15,35 @@
 // automatically applied to the <body> element in the app.
 
 @font-face {
-    font-family: 'Silkscreen';
-    src: url('../assets/fonts/slkscr-webfont.eot');
-    src: url('../assets/fonts/slkscr-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../assets/fonts/slkscr-webfont.woff') format('woff'),
-         url('../assets/fonts/slkscr-webfont.ttf') format('truetype'),
-         url('../assets/fonts/slkscr-webfont.svg#silkscreen') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: "Silkscreen";
+  src: url("../assets/fonts/slkscr-webfont.eot");
+  src: url("../assets/fonts/slkscr-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/slkscr-webfont.woff") format("woff"),
+    url("../assets/fonts/slkscr-webfont.ttf") format("truetype"),
+    url("../assets/fonts/slkscr-webfont.svg#silkscreen") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-$primary-color: #DC0A2D;
+$primary-color: #dc0a2d;
 
 .main-button {
-	background-color: $primary-color;
-	width: 100%;
-	padding: 1rem;
-	border-radius:3px;
-	border-top: 4px solid lighten($primary-color, 10%);
-	border-bottom: 4px solid darken($primary-color, 10%);
-	color:#fff;
-	text-transform: uppercase;
-	font: 1.6rem 'Silkscreen';
-	text-shadow: 0 2px rgba(#000, .4);
+  background-color: $primary-color;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 3px;
+  border-top: 4px solid lighten($primary-color, 10%);
+  border-bottom: 4px solid darken($primary-color, 10%);
+  color: #fff;
+  text-transform: uppercase;
+  font: 1.6rem "Silkscreen";
+  text-shadow: 0 2px rgba(#000, 0.4);
 }
 
 .actions-footer {
-	position: fixed;
-	bottom: 70px;
-	padding: 0 1rem;
-	width: 100%;
+  position: fixed;
+  bottom: 70px;
+  padding: 0 1rem;
+  width: 100%;
 }
