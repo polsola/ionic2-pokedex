@@ -31,7 +31,7 @@
       </ion-slides>
     </section>
 	<section class="pokemon__data">
-    <h1>{{pokemon.name}}</h1>
+    <h1 class="pokemon__name">{{pokemon.name}}</h1>
 		<ul class="pokemon__type">
 			<li *ngFor="let type of pokemon.types;" class="pokemon__type__item pokemon__type__item--{{ type.type.name }}">{{ type.type.name }}</li>
 		</ul>

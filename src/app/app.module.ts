@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from '@angular/http';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,9 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot({
-       name: '__mydb',
-       driverOrder: ['sqlite', 'indexeddb', 'websql']
-     })
+      name: '__mydb',
+      driverOrder: ['sqlite', 'indexeddb', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -45,7 +46,8 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    InAppBrowser,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

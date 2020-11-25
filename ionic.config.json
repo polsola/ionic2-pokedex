@@ -1,8 +1,13 @@
 {
   "name": "pokedex",
-  "app_id": "",
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/v2",
+      "proxyUrl": "https://pokeapi.co/api/v2"
+    }
+  ]
 }
